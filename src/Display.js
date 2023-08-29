@@ -1,9 +1,9 @@
 import './App.css'
 function Display({ products }) {
     return (
-        
+        <div className='maincontainer'>
+            <h2>OUR PRODUCTS</h2>
       <div className="product-container">
-        <h2>OUR PRODUCTS</h2>
 
         {products.map((product, index) => (
           <div key={index} className="product">
@@ -17,6 +17,7 @@ function Display({ products }) {
             <button className="add-to-cart-button">Add to Cart</button>
           </div>
         ))}
+      </div>
       </div>
     );
   }
