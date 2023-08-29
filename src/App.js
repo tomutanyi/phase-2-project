@@ -1,7 +1,10 @@
 
 import './App.css';
 import Display from './Display';
+import ProductDetails from './ProductDetails';
 import { useState, useEffect } from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
+
 
 function App() {
 const[products, setProducts] = useState([])
@@ -18,7 +21,11 @@ try {
 
   return (
     <div className="App">
-      <Display products={products}/>
+      <Routes>
+        <Route path="/" element={<Display products={products}/>}/>
+        <Route path="/product/:index" element={<ProductDetails/>}/>
+      </Routes>
+      
     </div>
   );
 }
