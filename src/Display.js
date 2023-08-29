@@ -1,9 +1,11 @@
+import { Link } from 'react-router-dom';
 import './App.css'
 function Display({ products }) {
     return (
         <div className='maincontainer'>
             <h2>OUR PRODUCTS</h2>
       <div className="product-container">
+
 
         {products.map((product, index) => (
           <div key={index} className="product">
@@ -14,7 +16,7 @@ function Display({ products }) {
             />
             <p className="product-name">{product.product_name}</p>
             <p className="product-price">${product.unit_price}</p>
-            <button className="add-to-cart-button">Add to Cart</button>
+            <Link to={`/product/${index}`}>View Details</Link>
           </div>
         ))}
       </div>
