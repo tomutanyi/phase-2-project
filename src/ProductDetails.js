@@ -8,9 +8,9 @@ const ProductDetails = () =>{
 
     useEffect(() => {
         try {
-        fetch(`http://ecommerce.muersolutions.com/api/v1/products/${index}`)
+        fetch(`http://ecommerce.muersolutions.com/api/v1/products`)
         .then(res => res.json())
-        .then(data => setProduct(data))   
+        .then(data => setProduct(data[index]))   
         } catch (error) {
             alert(error);   
         }
