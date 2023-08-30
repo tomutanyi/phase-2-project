@@ -4,13 +4,19 @@ const  Landing= () => {
     return ( 
         <div>
         <nav>
+        
         <Link to="/signUp" >signup</Link>
         <br />
         <Link to= "/">products</Link>
-
-        <button><FaCartPlus />
-        <span>0</span>
+        <br />
+        <Link to="/cart">
+        <button>
+              <FaCartPlus /><span>0</span>
         </button>
+          </Link> <br/>
+       
+
+        
       </nav>
          <Outlet></Outlet>
         </div>

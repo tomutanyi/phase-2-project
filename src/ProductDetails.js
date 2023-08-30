@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react";
 
 
-const ProductDetails = () =>{
+const ProductDetails = ({addToCart}) =>{
     let { index } = useParams();
     const [product, setProduct] = useState([])
 
@@ -33,7 +33,7 @@ const ProductDetails = () =>{
             <p>{product.product_description}</p>
             <p>rank: {product.ranking}</p>
             <p>{product.created}</p>
-            <button className="add-to-cart-button">Add to Cart</button>
+            <button onClick={()=>addToCart(product)} className="add-to-cart-button">Add to Cart</button>
            </div>
             
         </div>
