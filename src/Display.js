@@ -3,7 +3,10 @@ import './App.css'
 function Display({ products }) {
     return (
         <div className='maincontainer'>
-            <h2>OUR PRODUCTS</h2>
+          <div className='Title'>
+          <h2>OUR PRODUCTS</h2>
+          </div>
+           
        <div className="product-container">
         {products.map((product, index) => (
           <div key={index} className="product">

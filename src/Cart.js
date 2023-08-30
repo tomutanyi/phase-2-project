@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Cart = ({ inCart, onRemove }) => {
   const [totalCost, setTotalCost] = useState(0);
@@ -17,6 +18,10 @@ const Cart = ({ inCart, onRemove }) => {
 
   return (
     <div className="product-container">
+      <div className="checkout-link">
+         <p className="total-cost">Total Cost: ${totalCost}</p>
+         <Link to="/checkout">Checkout</Link>
+      </div>
       {inCart.map((product, index) => {
         return (
           <div className="product" key={index}>
@@ -34,7 +39,7 @@ const Cart = ({ inCart, onRemove }) => {
           </div>
         );
       })}
-      <p>Total Cost: ${totalCost}</p>
+
     </div>
   );
 };

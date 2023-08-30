@@ -5,6 +5,7 @@ import ProductDetails from './ProductDetails';
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import SignUp from './SignUp';
+import SignIn from './SignIn';
 import Landing from './Landing';
 import NotFound from './NotFound';
 import Cart from './Cart';
@@ -46,6 +47,7 @@ function removeFromCart(productToRemove) {
           <Route path="/" element={<Display products={products}/>}/>
           <Route path="/product/:index" element={<ProductDetails addToCart={addToCart}/>}/>
           <Route path="/signUp" element={<SignUp/>}/>
+          <Route path="/signIn" element={<SignIn/>}/>
           <Route path='/cart' element={<Cart inCart={inCart} onRemove={removeFromCart}/>}/>
           <Route path="/checkout" element={<Checkout/>}/>
         </Route>

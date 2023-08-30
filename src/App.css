@@ -118,7 +118,7 @@
 
 /* Style for the form container */
 .checkout-form-container {
-  max-width: 400px;
+  max-width: 200px;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
@@ -156,6 +156,77 @@
   background-color: #0056b3;
 }
 
+/* Navbar.css */
+
+/* Style for the navbar container */
+.navbar {
+  background-color: #333;
+  overflow: hidden;
+  display: flex;
+  padding: 5px;
+  margin-bottom: 50px;
+  justify-content: space-evenly;
+}
+
+/* Ensure the navbar spans horizontally */
+.navbar a {
+  float: left; /* Float links to the left */
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Style for the active link */
+.navbar a.active {
+  background-color: #007bff;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ff0000;
+  color: black;
+}
+
+/* Clear the float to prevent subsequent elements from floating */
+.navbar:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Cart.css */
+
+/* Style for the checkout link container */
+.checkout-link {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Style for the checkout link */
+.checkout-link a {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.checkout-link a:hover {
+  background-color: #0056b3;
+}
+
+.Title{
+  color: rgb(0, 0, 0);
+text-align: center;
+
+}
+
+.navLink{
+  color: #007bff;
+  font-Size: 45px;
+}
 
 
 
