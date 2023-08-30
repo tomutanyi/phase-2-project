@@ -17,7 +17,7 @@ const[products, setProducts] = useState([])
 
 useEffect(()=>{
 try {
-  fetch("http://ecommerce.muersolutions.com/api/v1/products")
+  fetch("'https://cors-anywhere.herokuapp.com/http://ecommerce.muersolutions.com/api/v1/products'")
   .then(res=>res.json())
   .then(data=>setProducts(data))
 } catch (error) {

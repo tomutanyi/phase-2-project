@@ -8,7 +8,7 @@ const ProductDetails = ({addToCart}) =>{
 
     useEffect(() => {
         try {
-        fetch(`http://ecommerce.muersolutions.com/api/v1/products`)
+        fetch(`'https://cors-anywhere.herokuapp.com/http://ecommerce.muersolutions.com/api/v1/products'`)
         .then(res => res.json())
         .then(data => setProduct(data[index]))   
         } catch (error) {
