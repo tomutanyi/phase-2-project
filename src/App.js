@@ -4,7 +4,7 @@ import Display from './Display';
 import ProductDetails from './ProductDetails';
 import { useState, useEffect } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
-
+import SignUp from './SignUp';
 
 function App() {
 const[products, setProducts] = useState([])
@@ -21,9 +21,13 @@ try {
 
   return (
     <div className="App">
+      <nav>
+        {/* <Link to=/> */}
+      </nav>
       <Routes>
         <Route path="/" element={<Display products={products}/>}/>
         <Route path="/product/:index" element={<ProductDetails/>}/>
+        <Route path="/signUp" element={<SignUp/>} />
       </Routes>
       
     </div>
