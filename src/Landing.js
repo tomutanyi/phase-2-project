@@ -9,6 +9,8 @@ const  Landing= () => {
         <br />
         <Link to= "/">products</Link>
         <br />
+        <Link to= "/checkout">Checkout</Link>
+        <br />
         <Link to="/cart">
         <button>
               <FaCartPlus /><span>0</span>

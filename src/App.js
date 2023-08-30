@@ -8,6 +8,7 @@ import SignUp from './SignUp';
 import Landing from './Landing';
 import NotFound from './NotFound';
 import Cart from './Cart';
+import Checkout from './Checkout';
 
 function App() {
   //Get to display products available
@@ -46,6 +47,7 @@ function removeFromCart(productToRemove) {
           <Route path="/product/:index" element={<ProductDetails addToCart={addToCart}/>}/>
           <Route path="/signUp" element={<SignUp/>}/>
           <Route path='/cart' element={<Cart inCart={inCart} onRemove={removeFromCart}/>}/>
+          <Route path="/checkout" element={<Checkout/>}/>
         </Route>
         <Route path='*' element={<NotFound/>}/>
       </Routes>

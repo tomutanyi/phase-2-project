@@ -1,49 +1,68 @@
-import { Component } from "react"
-import { FaAddressBook } from "react-icons/fa"
+import React, { useState } from 'react';
+import './App.css'
 
-// clicking on checkout adds everything from 
-// the cart to the checkout page
+const CheckoutForm = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    address: '',
+    cardNumber: '',
+    expiryDate: '',
+    cvv: '',
+  });
 
-// it also removes everything present in the cart
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
 
-// The checkout page has a payment process 
-// and address field. After 
-// confirming checkout it adds the prices of all items
-// and generates a receipt which is passed to a Component
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData);
+    // You can add further logic here, like sending the data to a server
+  };
 
-// called orders
+  return (
+    <div className="checkout-form-container">
+      <h2>Checkout</h2>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Name:
+          <input placeholder='Write your full name' type="text" name="name" value={formData.name} onChange={handleChange} required />
+        </label>
+        <br />
+        <label>
+          Email:
+          <input placeholder='E-mail' type="email" name="email" value={formData.email} onChange={handleChange} required />
+        </label>
+        <br />
+        <label>
+          Address:
+          <textarea placeholder='Address' name="address" value={formData.address} onChange={handleChange} required />
+        </label>
+        <br />
+        <label>
+          Card Number:
+          <input  type="text" name="cardNumber" value={formData.cardNumber} onChange={handleChange} required />
+        </label>
+        <br />
+        <label>
+          Expiry Date:
+          <input type="text" name="expiryDate" value={formData.expiryDate} onChange={handleChange} required />
+        </label>
+        <br />
+        <label>
+          CVV:
+          <input type="text" name="cvv" value={formData.cvv} onChange={handleChange} required />
+        </label>
+        <br />
+        <button className="checkout-form-button" type="submit">Place Order</button>
+      </form>
+    </div>
+  );
+};
 
-// first and last name
-// country 
-// county
-// Address
-// payment method
-
-
-const Checkout = () => {
-    return ( 
-        <div>
-            <label>First Name</label>
-            <input placeholder="First Name"/>
-            <label>Last Name</label>
-            <input placeholder="Last Name"/>
-            <label>Telephone number</label>
-            <input placeholder="Telephone number"/>
-            <label>Country</label>
-            <input placeholder="Country"/>
-            <label>County</label>
-            <input placeholder="County"/>
-            <label>City</label>
-            <input placeholder="City"/>
-            <label>Address</label>
-            <input placeholder="Address"/>
-            <label>Payment Method</label>
-            <input placeholder="Payment Method"/>
-            
-        </div>
-
-
-     );
-}
- 
-export default ;
+export default CheckoutForm;
