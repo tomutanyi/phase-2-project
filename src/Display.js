@@ -2,9 +2,10 @@ import { Link } from 'react-router-dom';
 import './App.css'
 function Display({ products }) {
     return (
-        
+        <div className='maincontainer'>
+            <h2>OUR PRODUCTS</h2>
       <div className="product-container">
-        <h2>OUR PRODUCTS</h2>
+
 
         {products.map((product, index) => (
           <div key={index} className="product">
@@ -20,6 +21,7 @@ function Display({ products }) {
             </Link>
           </div>
         ))}
+      </div>
       </div>
     );
   }

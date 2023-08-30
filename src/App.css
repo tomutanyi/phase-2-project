@@ -1,125 +1,12 @@
 /* App.css */
 
-/* Global styles */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  margin: 0;
-  padding: 0;
-}
-
-.App {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* Header styles */
-h2 {
-  font-size: 24px;
-  text-align: center; /* Center the header */
-  margin-top: 20px; /* Add some space at the top */
-}
-
-/* Product container styles */
-.product-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-between;
-}
-
-/* Product styles */
-.product {
-  border: 1px solid #ddd;
-  padding: 10px;
-  width: 20%; 
-  height: 60vh;
-  text-align: center;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
-}
-
-.product:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.product-name {
-  font-weight: bold;
-  margin: 10px 0;
-  font-size: 18px;
-}
-
-.product-price {
-  color: green;
-  margin-bottom: 10px;
-  font-size: 16px;
-}
-
-.product-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 5px;
-}
-
-/* Product details styles */
-.product-details-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.product-details-container img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 5px;
-}
-
-.product-details-name {
-  font-size: 24px;
-  font-weight: bold;
-  margin: 10px 0;
-}
-
-.product-details-price {
-  color: green;
-  margin: 10px 0;
-  font-size: 20px;
-}
-
-.product-details-description {
-  margin: 20px 0;
-  font-size: 16px;
+\
 }
 
 .add-to-cart-button {
-  background-color: #007bff;
-  color: white;
+  background-color: #3498db;
+  color: #fff;
   border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-size: 18px;
-  margin-top: 20px;
-}
-
-.add-to-cart-button:hover {
-  background-color: #0056b3;
-}
-
-/* Add media query for smaller screens */
-@media (max-width: 768px) {
-  .product {
-    width: 100%; /* Full width on smaller screens */
-  }
-}
-
-
 
 
 
