@@ -21,7 +21,8 @@ const ProductDetails = () =>{
         return <div>loading...</div>
     }
     return (
-        <div>
+        <div className="product-container">
+           <div className="product">
            <img
               src={product.product_full_image}
               alt={product.product_name}
@@ -30,9 +31,10 @@ const ProductDetails = () =>{
             <p className="product-name">{product.product_name}</p>
             <p className="product-price">${product.unit_price}</p> 
             <p>{product.product_description}</p>
-            <p>{product.ranking}</p>
+            <p>rank: {product.ranking}</p>
             <p>{product.created}</p>
             <button className="add-to-cart-button">Add to Cart</button>
+           </div>
             
         </div>
     )

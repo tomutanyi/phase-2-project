@@ -17,7 +17,6 @@ function Display({ products }) {
             />
             <p className="product-name">{product.product_name}</p>
             <p className="product-price">${product.unit_price}</p>
-            {/* <Link to={`/product/${index}`}>View Details</Link> */}
             </Link>
           </div>
         ))}
