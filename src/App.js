@@ -5,6 +5,8 @@ import ProductDetails from './ProductDetails';
 import { useState, useEffect } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import SignUp from './SignUp';
+import Landing from './Landing';
+import NotFound from './NotFound';
 
 function App() {
 const[products, setProducts] = useState([])
@@ -21,13 +23,14 @@ try {
 
   return (
     <div className="App">
-      <nav>
-        {/* <Link to=/> */}
-      </nav>
+      
       <Routes>
-        <Route path="/" element={<Display products={products}/>}/>
-        <Route path="/product/:index" element={<ProductDetails/>}/>
-        <Route path="/signUp" element={<SignUp/>} />
+        <Route element={<Landing/>}>
+          <Route path="/" element={<Display products={products}/>}/>
+          <Route path="/product/:index" element={<ProductDetails/>}/>
+          <Route path="/signUp" element={<SignUp/>} />
+        </Route>
+        <Route path='*' element={<NotFound/>}/>
       </Routes>
       
     </div>
