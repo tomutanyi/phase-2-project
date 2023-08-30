@@ -3,37 +3,28 @@ import './App.css'
 
 const SignIn = () => {
 
-    const[email,setEmail]=useState('')
-    const[password,setPassword]=useState('')
-    const[first_name,setFirst_Name]=useState('')
-    const[last_name,setLast_Name]=useState('')
 
-    function handleEmail(e){
-        setEmail(e.target.value)
-    }
+    const[password,setPassword]=useState('')
+
+    const[user_name,setUser_Name]=useState('')
 
     function handlePassword(e){
         setPassword(e.target.value)
     }
     
-    function handleFirstName(e){
-        setFirst_Name(e.target.value)
+    function handleUser_Name(e){
+        setUser_Name(e.target.value)
     }
 
-    function handleLastName(e){
-        setLast_Name(e.target.value)
-    }
     function handleSubmit(e){
         e.preventDefault()
 
         let newObj={
-            "first_name": first_name,
-            "last_name": last_name,
-            "email": email,
+            "user_name": user_name,
             "password": password
         }
       
-        fetch("http://ecommerce.muersolutions.com/api/v1/user/signup",{
+        fetch("http://ecommerce.muersolutions.com/api/v1/user/login",{
             method: "POST",
             headers: {"Content-Type":"application/json"},
             body: JSON.stringify(newObj)
@@ -42,10 +33,8 @@ const SignIn = () => {
         .then(data=>console.log(data))
         .catch(error=>console.log(error))
 
-        // console.log(password);
-        // console.log(email);
-        // console.log(first_name);
-        // console.log(last_name);
+        console.log(password);
+        console.log(user_name);
         e.target.reset()
     }
 
@@ -53,29 +42,16 @@ const SignIn = () => {
         <div className="signup-container">
             <p><strong>Sign In</strong></p>
           <form onSubmit={handleSubmit}>
-            <label className="signup-label">First Name</label>
+            <label className="signup-label">Username</label>
             <input
               className="signup-input"
               type="text"
-              placeholder="Enter your first name"
-              onChange={handleFirstName}
+              placeholder="Enter your username"
+              value={user_name}
+              onChange={handleUser_Name}
             />
-            <label className="signup-label">Last Name</label>
-            <input
-              className="signup-input"
-              type="text"
-              placeholder="Enter your last name"
-              onChange={handleLastName}
-            />
-            <label className="signup-label">Email:</label>
-            <input
-              className="signup-input"
-              type="email"
-              required
-              placeholder="Enter your email"
-              value={email}
-              onChange={handleEmail}
-            />
+    
+            
             <label className="signup-label">Password:</label>
             <input
               className="signup-input"
