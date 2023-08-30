@@ -32,18 +32,14 @@ function addToCart(product){
     console.log(inCart);
     //alert("Product added successfully")
 }
-
-// function removeFromCart(productInCart){
-//   let cartProduct=inCart.filter((item)=>item.index !== productInCart.index)
-//   console.log(cartProduct);
-//   console.log(productInCart);
-//   setInCart(cartProduct)
-//      alert("Removed from Cart")
-//  }
   
+function removeFromCart(productToRemove) {
+  const updatedCart = inCart.filter((product) => product !== productToRemove);
+  setInCart(updatedCart);
+  
+}
   return (
     <div className="App">
-
       <Routes>
         <Route element={<Landing/>}>
           <Route path="/" element={<Display products={products}/>}/>
