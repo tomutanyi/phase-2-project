@@ -4,9 +4,7 @@ function Display({ products }) {
     return (
         <div className='maincontainer'>
             <h2>OUR PRODUCTS</h2>
-      <div className="product-container">
-
-
+       <div className="product-container">
         {products.map((product, index) => (
           <div key={index} className="product">
             <Link to={`/product/${index}`}>
