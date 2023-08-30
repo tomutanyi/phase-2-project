@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './App.css'
 
 const SignUp = () => {
 
@@ -48,22 +49,48 @@ const SignUp = () => {
         e.target.reset()
     }
 
-   return(
-    <div>
-        <form onSubmit={handleSubmit} >
-            <label>First Name</label>
-            <input type="text" placeholder="Enter your first name" onChange={handleFirstName}/>
-            <label>Last Name</label>
-            <input type="text" placeholder="Enter your last name" onChange={handleLastName}/>
-            <label>Email:</label>
-            <input type="email" required placeholder="enter your email" requiredvalue={email} onChange={handleEmail} />
-            <label>Password:</label>
-            <input type="password" onChange={handlePassword} required value={password} placeholder="enter your password" />
-            <button>Sign Up</button>
-        </form>
-    </div>
-   )
-
-}
+    return (
+        <div className="signup-container">
+            <p><strong>Sign up here</strong></p>
+          <form onSubmit={handleSubmit}>
+            <label className="signup-label">First Name</label>
+            <input
+              className="signup-input"
+              type="text"
+              placeholder="Enter your first name"
+              onChange={handleFirstName}
+            />
+            <label className="signup-label">Last Name</label>
+            <input
+              className="signup-input"
+              type="text"
+              placeholder="Enter your last name"
+              onChange={handleLastName}
+            />
+            <label className="signup-label">Email:</label>
+            <input
+              className="signup-input"
+              type="email"
+              required
+              placeholder="Enter your email"
+              value={email}
+              onChange={handleEmail}
+            />
+            <label className="signup-label">Password:</label>
+            <input
+              className="signup-input"
+              type="password"
+              onChange={handlePassword}
+              required
+              value={password}
+              placeholder="Enter your password"
+            />
+            <button className="signup-button">Sign Up</button>
+          </form>
+        </div>
+      );
+    };
+    
+    
  
 export default SignUp;
