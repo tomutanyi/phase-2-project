@@ -49,9 +49,7 @@ const SignIn = () => {
               placeholder="Enter your username"
               value={user_name}
               onChange={handleUser_Name}
-            />
-    
-            
+            />            
             <label className="signup-label">Password:</label>
             <input
               className="signup-input"
