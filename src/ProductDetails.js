@@ -7,7 +7,12 @@ const ProductDetails = ({addToCart}) => {
 
     useEffect(() => {
         try {
-            fetch(`http://ecommerce.muersolutions.com/api/v1/products`)
+            fetch('http://ecommerce.muersolutions.com/api/v1/products', {
+                method: 'GET',
+                headers: {
+                  'Content-Security-Policy': 'upgrade-insecure-requests'
+                }
+              })
             .then(res => res.json())
             .then(data => setProduct(data[index]))
             .catch(error => alert(error));   

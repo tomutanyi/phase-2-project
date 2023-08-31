@@ -16,7 +16,12 @@ function App() {
 
   useEffect(() => {
     try {
-      fetch("http://ecommerce.muersolutions.com/api/v1/products")  // Removed 'cors-anywhere' proxy
+      fetch('http://ecommerce.muersolutions.com/api/v1/products', {
+        method: 'GET',
+        headers: {
+          'Content-Security-Policy': 'upgrade-insecure-requests'
+        }
+      }) // Removed 'cors-anywhere' proxy
         .then(res => res.json())
         .then(data => setProducts(data))
         .catch(error => console.log(error));  // Handle fetch errors
