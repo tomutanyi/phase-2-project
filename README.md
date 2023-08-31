@@ -1,72 +1,99 @@
-# Getting Started with Create React App
+## Project Description
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is an E-commerce site that allows users to select items, add the items to their cart and perform a checkout.
 
-## Available Scripts
+![A gif of the website](gifs/description.gif)
 
-In the project directory, you can run:
+The link to my frontend on vercel: 
 
-### `npm start`
+https://phase-2-project-umber.vercel.app/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+My backend APIs:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+BASE_URL= http://ecommerce.muersolutions.com/Links to an external site.api/v1
 
-### `npm test`
+Docs_base_url = http://ecommerce.muersolutions.com/developer/redocLinks to an external site.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ 
 
-### `npm run build`
+ENDPOINTS
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+SIGN UP => http://ecommerce.muersolutions.com/api/v1/user/signupLinks to an external site.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+SIGN IN => http://ecommerce.muersolutions.com/api/v1/user/loginLinks to an external site.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+ 
 
-### `npm run eject`
+Fetch Products => http://ecommerce.muersolutions.com/api/v1/products
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Project Setup
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To get started, follow these steps to set up your project:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Fork and clone the repository.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+`git clone git@github.com:tomutanyi/phase-2-project.git`
 
-## Learn More
+2. install npm and use npm start to start the app.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Use this commands:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+`npm install`
 
-### Code Splitting
+Run npm start to start the React app:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+`npm start`
 
-### Analyzing the Bundle Size
+Use this command to stop the React app:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+`CTRL + C`
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Project Features
 
-### Advanced Configuration
+1. A page displaying all the products
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+![](gifs/description.gif)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+2. Clicking on a product displays it's details.
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# phase-2-project
-# phase-2-project
+![](gifs/1-1.gif)
+
+3. A searchbar to search tproducts regardless of case.
+
+
+![](gifs/2-1.gif)
+
+
+4. A cart to add items.
+
+
+![](gifs/3-1.gif)
+
+
+5. A checkout form to checkout items to buy once in the cart
+
+
+![](gifs/4-1.gif)
+
+
+## Technologies used
+
+1. React for the frontend.
+2. CSS and React icons for the styling.
+3. Node.js for running the react app.
+4. Vercel for front-end hosting
+
+## Authors
+
+Tom Omele Mutanyi
+Mercy Muriithi
+Victor Masibo
+Victor Wanjala
+William Nyongesa
+
+## License
+
+Licensed under the [MIT license](LICENSE)
