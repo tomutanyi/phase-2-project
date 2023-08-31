@@ -1,4 +1,3 @@
-
 import './App.css';
 import Display from './Display';
 import ProductDetails from './ProductDetails';
@@ -12,6 +11,7 @@ import Cart from './Cart';
 import Checkout from './Checkout';
 
 function App() {
+
   //Get to display products available
 const[products, setProducts] = useState([])
 const location = useLocation();
@@ -27,21 +27,17 @@ try {
 }
 },[])
 
-//function to add products to cart
-    //set state
-const[inCart,setInCart]=useState([])
-    //function
-function addToCart(product){
-  setInCart([...inCart,product])
+
+  function addToCart(product) {
+    setInCart([...inCart, product]);
     console.log(inCart);
-    //alert("Product added successfully")
-}
-  
-function removeFromCart(productToRemove) {
-  const updatedCart = inCart.filter((product) => product !== productToRemove);
-  setInCart(updatedCart);
-  
-}
+  }
+
+  function removeFromCart(productToRemove) {
+    const updatedCart = inCart.filter(product => product !== productToRemove);
+    setInCart(updatedCart);
+  }
+
   return (
     <div className="App">
       <Routes>
@@ -55,7 +51,6 @@ function removeFromCart(productToRemove) {
         </Route>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
-      
     </div>
   );
 }
