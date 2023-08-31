@@ -1,12 +1,21 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import {  useNavigate } from 'react-router-dom';
 
 function SignUp() {
-  const [username, setUsername] = useState('');
+  const navigate = useNavigate();
+
+  const [username, setUsername] = useState("")
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
 
   const handleSignUp = () => {
-    // Assuming a simple implementation, you should perform input validation and error handling
-    if (username && password) {
+
+    if (username && password && confirmPassword) {
+      if (password !== confirmPassword) {
+        alert("Passwords don't match.");
+        return;
+      }
+
       const userData = {
         username,
         password,
@@ -15,9 +24,13 @@ function SignUp() {
       localStorage.setItem('userData', JSON.stringify(userData));
       setUsername('');
       setPassword('');
+      setConfirmPassword('');
       alert('Sign up successful!');
+      
+      
+      navigate('/signIn');
     } else {
-      alert('Please fill in both username and password.');
+      alert('Please fill in all fields.');
     }
   };
 
@@ -35,6 +48,12 @@ function SignUp() {
         placeholder="Password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
+      />
+      <input
+        type="password"
+        placeholder="Confirm Password"
+        value={confirmPassword}
+        onChange={(e) => setConfirmPassword(e.target.value)}
       />
       <button onClick={handleSignUp}>Sign Up</button>
     </div>

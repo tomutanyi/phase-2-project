@@ -1,8 +1,15 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function SignIn() {
+
+  const navigate = useNavigate();
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState('');
+
+
+
+  
 
   const handleSignIn = () => {
     // Assuming a simple implementation, you should perform input validation and error handling
@@ -11,6 +18,7 @@ function SignIn() {
       const userData = JSON.parse(storedUserData);
       if (username === userData.username && password === userData.password) {
         alert('Sign in successful!');
+         navigate("/")
       } else {
         alert('Invalid credentials.');
       }
