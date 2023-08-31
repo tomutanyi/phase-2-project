@@ -1,96 +1,63 @@
-import { useState } from "react";
-import './App.css'
+import { useState } from 'react';
+import {  useNavigate } from 'react-router-dom';
 
-const SignUp = () => {
+function SignUp() {
+  const navigate = useNavigate();
 
-    const[email,setEmail]=useState('')
-    const[password,setPassword]=useState('')
-    const[first_name,setFirst_Name]=useState('')
-    const[last_name,setLast_Name]=useState('')
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
 
-    function handleEmail(e){
-        setEmail(e.target.value)
-    }
+  const handleSignUp = () => {
 
-    function handlePassword(e){
-        setPassword(e.target.value)
-    }
-    
-    function handleFirstName(e){
-        setFirst_Name(e.target.value)
-    }
+    if (username && password && confirmPassword) {
+      if (password !== confirmPassword) {
+        alert("Passwords don't match.");
+        return;
+      }
 
-    function handleLastName(e){
-        setLast_Name(e.target.value)
-    }
-    function handleSubmit(e){
-        e.preventDefault()
+      const userData = {
+        username,
+        password,
+      };
 
-        let newObj={
-            "first_name": first_name,
-            "last_name": last_name,
-            "email": email,
-            "password": password
-        }
+      localStorage.setItem('userData', JSON.stringify(userData));
+      setUsername('');
+      setPassword('');
+      setConfirmPassword('');
+      alert('Sign up successful!');
       
-        fetch("http://ecommerce.muersolutions.com/api/v1/user/signup",{
-            method: "POST",
-            headers: {"Content-Type":"application/json"},
-            body: JSON.stringify(newObj)
-        })
-        .then(res=>res.json())
-        .then(data=>console.log(data))
-        .catch(error=>console.log(error))
-
-        // console.log(password);
-        // console.log(email);
-        // console.log(first_name);
-        // console.log(last_name);
-        e.target.reset()
+      
+      navigate('/signIn');
+    } else {
+      alert('Please fill in all fields.');
     }
+  };
 
-    return (
-        <div className="signup-container">
-            <p><strong>Sign up here</strong></p>
-          <form onSubmit={handleSubmit}>
-            <label className="signup-label">First Name</label>
-            <input
-              className="signup-input"
-              type="text"
-              placeholder="Enter your first name"
-              onChange={handleFirstName}
-            />
-            <label className="signup-label">Last Name</label>
-            <input
-              className="signup-input"
-              type="text"
-              placeholder="Enter your last name"
-              onChange={handleLastName}
-            />
-            <label className="signup-label">Email:</label>
-            <input
-              className="signup-input"
-              type="email"
-              required
-              placeholder="Enter your email"
-              value={email}
-              onChange={handleEmail}
-            />
-            <label className="signup-label">Password:</label>
-            <input
-              className="signup-input"
-              type="password"
-              onChange={handlePassword}
-              required
-              value={password}
-              placeholder="Enter your password"
-            />
-            <button className="signup-button">Sign Up</button>
-          </form>
-        </div>
-      );
-    };
-    
-    
- 
+  return (
+    <div>
+      <h2>Sign Up</h2>
+      <input
+        type="text"
+        placeholder="Username"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <input
+        type="password"
+        placeholder="Confirm Password"
+        value={confirmPassword}
+        onChange={(e) => setConfirmPassword(e.target.value)}
+      />
+      <button onClick={handleSignUp}>Sign Up</button>
+    </div>
+  );
+}
+
 export default SignUp;
