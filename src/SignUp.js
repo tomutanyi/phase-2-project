@@ -73,6 +73,7 @@ const SignUp = () => {
               type="email"
               required
               placeholder="Enter your email"
+              value={email}
               onChange={handleEmail}
             />
             <label className="signup-label">Password:</label>
@@ -81,6 +82,7 @@ const SignUp = () => {
               type="password"
               onChange={handlePassword}
               required
+              value={password}
               placeholder="Enter your password"
             />
             <button className="signup-button">Sign Up</button>

@@ -1,14 +1,8 @@
 import React, { useState, useEffect } from "react";
-import {useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 
 const Cart = ({ inCart, onRemove }) => {
   const [totalCost, setTotalCost] = useState(0);
-  const navigate=useNavigate()
-  
-   function handleCheckOut(){
-    navigate("/checkout",{state:{totalCost:totalCost}})
-   }
 
   useEffect(() => {
     calculateTotalCost();
@@ -26,8 +20,7 @@ const Cart = ({ inCart, onRemove }) => {
     <div className="product-container">
       <div className="checkout-link">
          <p className="total-cost">Total Cost: ${totalCost}</p>
-         <button onClick={handleCheckOut}>CheckOut</button>
-         {/* <Link to="/checkout">Checkout</Link> */}
+         <Link to="/checkout">Checkout</Link>
       </div>
       {inCart.map((product, index) => {
         return (
@@ -39,7 +32,9 @@ const Cart = ({ inCart, onRemove }) => {
             />
             <p className="product-name">{product.product_name}</p>
             <p className="product-price">${product.unit_price}</p>
+            <p>{product.product_description}</p>
             <p>rank: {product.ranking}</p>
+            <p>{product.created}</p>
             <button onClick={() => onRemove(product)}>Remove</button>
           </div>
         );
