@@ -8,7 +8,7 @@ const ProductDetails = ({addToCart}) =>{
 
     useEffect(() => {
         try {
-        fetch(`'https://cors-anywhere.herokuapp.com/http://ecommerce.muersolutions.com/api/v1/products'`)
+        fetch(`http://ecommerce.muersolutions.com/api/v1/products`)
         .then(res => res.json())
         .then(data => setProduct(data[index]))   
         } catch (error) {
@@ -29,10 +29,10 @@ const ProductDetails = ({addToCart}) =>{
               className="product-image"
             />
             <p className="product-name">{product.product_name}</p>
-            <p className="product-price">${product.unit_price}</p> 
-            <p>{product.product_description}</p>
-            <p>rank: {product.ranking}</p>
-            <p>{product.created}</p>
+            <h2 className="product-price">${product.unit_price}</h2> 
+            <h6>Description: {product.product_description}</h6>
+            <p>Rank: {product.ranking}</p>
+            <h6>Created On: {product.created}</h6>
             <button onClick={()=>addToCart(product)} className="add-to-cart-button">Add to Cart</button>
            </div>
             

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css'
 
-const CheckoutForm = () => {
+const CheckoutForm = ({totalCost,onRemove}) => {
     
   const [formData, setFormData] = useState({
     name: '',
@@ -62,13 +62,13 @@ const CheckoutForm = () => {
           <input type="text" name="cvv" value={formData.cvv} onChange={handleChange} required />
         </label>
         <label className="checkout-form-label">
-          Total Cost:
+          Total Cost (USD): 
           <br />
-          <input type="number" name="cost" value={formData.cost} onChange={handleChange} disabled  />
+        <input type="number" name="cost" value= {totalCost} onChange={handleChange} disabled  />
         </label>
-
         <br />
-        <button className="checkout-form-button" type="submit">Place Order</button>
+        <button onClick={onRemove} className="checkout-form-button" type="submit">Place Order</button>
+     
       </form>
     </div>
   );
