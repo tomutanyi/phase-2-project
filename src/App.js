@@ -2,7 +2,7 @@ import './App.css';
 import Display from './Display';
 import ProductDetails from './ProductDetails';
 import { useState, useEffect } from 'react';
-import { Routes, Route,useLocation } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import SignUp from './SignUp';
 import SignIn from './SignIn';
 import Landing from './Landing';
@@ -11,22 +11,19 @@ import Cart from './Cart';
 import Checkout from './Checkout';
 
 function App() {
+  const [products, setProducts] = useState([]);
+  const [inCart, setInCart] = useState([]);
 
-  //Get to display products available
-const[products, setProducts] = useState([])
-const location = useLocation();
-  const checkOutProp = location.state ? location.state.totalCost : null;
-
-useEffect(()=>{
-try {
-  fetch("http://ecommerce.muersolutions.com/api/v1/products")
-  .then(res=>res.json())
-  .then(data=>setProducts(data))
-} catch (error) {
-  console.log(error)
-}
-},[])
-
+  useEffect(() => {
+    try {
+      fetch("http://ecommerce.muersolutions.com/api/v1/products")  // Removed 'cors-anywhere' proxy
+        .then(res => res.json())
+        .then(data => setProducts(data))
+        .catch(error => console.log(error));  // Handle fetch errors
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
 
   function addToCart(product) {
     setInCart([...inCart, product]);
@@ -47,7 +44,7 @@ try {
           <Route path="/signUp" element={<SignUp/>}/>
           <Route path="/signIn" element={<SignIn/>}/>
           <Route path='/cart' element={<Cart inCart={inCart} onRemove={removeFromCart}/>}/>
-          <Route path="/checkout" element={<Checkout onRemove={removeFromCart} totalCost={checkOutProp}/>}/>
+          <Route path="/checkout" element={<Checkout/>}/>
         </Route>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
