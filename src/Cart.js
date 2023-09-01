@@ -36,10 +36,12 @@ const Cart = ({ inCart, onRemove }) => {
               alt={product.product_name}
               className="product-image"
             />
+              <div className='product-details'>
             <p className="product-name">{product.product_name}</p>
             <p className="product-price">${product.unit_price}</p>
             <p>rank: {product.ranking}</p>
             <button onClick={() => onRemove(product)}>Remove</button>
+            </div>
           </div>
         );
       })}
