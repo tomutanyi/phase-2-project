@@ -43,6 +43,11 @@ const Landing = () => {
                 <FaCartPlus className='icon' />
                 <p>Cart</p>
             </Link>
+
+            <Link className="navLink" to="/orders">
+              <p>Orders</p>
+            </Link>
+            <br />
             
 
             {loggedInUser && (
