@@ -23,21 +23,23 @@ function SignIn() {
     }
   };
   return (
-    <div>
+    <div className="sign-in-container">
       <h2>Sign In</h2>
       <input
         type="text"
         placeholder="Username"
         value={username}
+        className="sign-in-input"
         onChange={(e) => setUsername(e.target.value)}
       />
       <input
         type="password"
         placeholder="Password"
         value={password}
+        className="sign-in-input"
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button onClick={handleSignIn}>Sign In</button>
+      <button className="sign-in-button" onClick={handleSignIn}>Sign In</button>
     </div>
   );
 }

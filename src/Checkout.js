@@ -61,13 +61,13 @@ const CheckoutForm = ({totalCost,onRemove, navigate }) => {
           Name:
           <br />
           <input placeholder='Write your full name' type="text" name="name" value={formData.name} onChange={handleChange} required />
-</label>
-<label className="checkout-form-label">
-  Phone Number:
-  <br />
-  <input placeholder='Phone Number' type="tel" name="tel" value={formData.tel} onChange={handleChange} required />
-</label>
-<label className="checkout-form-label">
+            </label>
+            <label className="checkout-form-label">
+              Phone Number:
+              <br />
+              <input placeholder='Phone Number' type="tel" name="tel" value={formData.tel} onChange={handleChange} required />
+            </label>
+            <label className="checkout-form-label">
         Address:
         <br />
         <select

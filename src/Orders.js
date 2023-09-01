@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import {useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
@@ -23,26 +24,28 @@ const Orders = () => {
   }, []);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div className="loading">Loading...</div>;
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <div className="error">Error: {error.message}</div>;
   }
 
   return (
-    
-    <div>
-      <h1>Orders</h1>
-      <ul>
+    <div className="orders-container">
+      <h1 className="orders-title">Orders</h1>
+      <ul className="orders-list">
         {orders.map((order) => (
-          <li key={order.id}>
-            Order Number: {order.id}<br/> Name: {order.name}<br/>  Tel: {order.tel}<br/>  Address: {order.address}<br/>  Payment: {order.payment}<br/>  Total Cost: {order.totalCost}
+          <li key={order.id} className="order-item">
+            <p>Order Number: {order.id}</p>
+            <p>Name: {order.name}</p>
+            <p>Tel: {order.tel}</p>
+            <p>Address: {order.address}</p>
+            <p>Payment: {order.payment}</p>
+            <p>Total Cost: {order.totalCost}</p>
           </li>
-          
         ))}
-        <br/> 
-      </ul><br/> <br/> 
+      </ul>
     </div>
   );
 };
