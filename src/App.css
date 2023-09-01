@@ -406,10 +406,168 @@
 }
 
 
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cart-summary {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-total-cost {
+  font-weight: bold;
+}
+
+.cart-checkout-btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cart-checkout-btn:hover {
+  background-color: #0056b3;
+}
+
+.cart-products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px;
+}
+
+.cart-product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.cart-product-image {
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: cover;
+}
+
+.cart-product-details {
+  margin-top: 8px;
+}
+
+.cart-product-name {
+  font-weight: bold;
+}
+
+.cart-product-price {
+  font-weight: bold;
+  color: #007bff;
+}
+
+button {
+  background-color: #fff;
+  color: #007bff;
+  border: 1px solid #007bff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+button:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+
+/* SignIn.css */
+.sign-in-container {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+
+.sign-in-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.sign-in-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.sign-in-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.sign-in-button:hover {
+  background-color: #0056b3;
+}
+
+/* Add this CSS in a separate stylesheet or in your component's style tag */
+.sign-up-container {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+}
+
+.sign-up-heading {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.sign-up-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.sign-up-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sign-up-button:hover {
+  background-color: #0056b3;
+}
 
 
 
 
-  
-  
   

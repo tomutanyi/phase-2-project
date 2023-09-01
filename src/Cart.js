@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import {useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Cart = ({ inCart, onRemove }) => {
   const [totalCost, setTotalCost] = useState(0);
-  const navigate=useNavigate()
+  const navigate = useNavigate();
 
-   function handleCheckOut(){
-    navigate("/checkout",{state:{totalCost:totalCost}})
-   }
+  function handleCheckOut() {
+    navigate("/checkout", { state: { totalCost: totalCost } });
+  }
 
   useEffect(() => {
     calculateTotalCost();
@@ -22,31 +22,31 @@ const Cart = ({ inCart, onRemove }) => {
   };
 
   return (
-    <div className="product-container">
-      <div className="checkout-link">
-         <p className="total-cost">Total Cost: ${totalCost}</p>
-         <button className="checkout-btn" onClick={handleCheckOut}>CheckOut</button>
-         {/* <Link to="/checkout">Checkout</Link> */}
+    <div className="cart-container">
+      <div className="cart-summary">
+        <p className="cart-total-cost">Total Cost: ${totalCost}</p>
+        <button className="cart-checkout-btn" onClick={handleCheckOut}>
+          CheckOut
+        </button>
       </div>
       {inCart.map((product, index) => {
         return (
-          <div className="product" key={index}>
+          <div className="cart-product" key={index}>
             <img
               src={product.product_full_image}
               alt={product.product_name}
-              className="product-image"
+              className="cart-product-image"
             />
-              <div className='product-details'>
-            <p className="product-name">{product.product_name}</p>
-            <p className="product-price">${product.unit_price}</p>
-            <p>rank: {product.ranking}</p>
-            <button onClick={() => onRemove(product)}>Remove</button>
+            <div className="cart-product-details">
+              <p className="cart-product-name">{product.product_name}</p>
+              <p className="cart-product-price">${product.unit_price}</p>
+              <p>Rank: {product.ranking}</p>
+              <button onClick={() => onRemove(product)}>Remove</button>
             </div>
           </div>
         );
       })}
-
-</div>
+    </div>
   );
 };
 
