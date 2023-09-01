@@ -50,7 +50,8 @@ const Landing = () => {
             {loggedInUser && (
               <div className='navLink'>
                  <h3>Welcome, {loggedInUser.username}!</h3>
-                 <Link className="navLink" to="/orders">
+                 
+                 <Link className='order' to="/orders">
                     <p>Orders</p>
                 </Link>    
                            

@@ -34,12 +34,17 @@
   .navLink p{
     font-size: 20px;
     color: black;
-  margin-left: 8px;
+  margin-left: 10px;
     
   }
 
+  .order{
+    text-decoration: none;
+    margin-right: 80px;
+  }
+
   .navLink h3{
-    margin-right: 50px;
+    margin-right: 80px;
   }
 
   .icon{
@@ -177,34 +182,48 @@
     flex-wrap: wrap;
     align-items: center;
     padding-left: 100px;
-    /* border: 3px solid var(--color-brand-primary); */
     background-color: var(--color-medium-gray);
     margin-bottom: 40px;
-
-   /* Vertically center the content */
   }
   
   .img {
     
-    flex: 1; /* The image will take up 30% of the container width */
+    flex: 1;
     max-width: 100%; /* Set a maximum width for the image */
-    
-    padding: 10px; /* Optional padding for spacing */
+    padding: 10px;
   }
   
   .img img{
-    
-    height: 500px;
+    max-width: 100%;
+    height: auto;
   }
   
   .text {
-   font-size: larger;
-   font-weight: 500;
+   font-size: medium;
+   font-weight: 300;
    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     flex: 2; /* The text will take up 70% of the container width */
-    max-width: 70%; /* Set a maximum width for the text */
+    max-width: 70%; 
     padding: 10px; /* Optional padding for spacing */
     text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .decor {
+      padding-left: 20px; /* Adjust padding for smaller screens */
+      flex-direction: column;
+    }
+  
+    .img {
+      flex: none;
+      /* max-width: 100%;
+      padding: 5px; Reduce padding for smaller screens */
+    }
+  
+    .text {
+      flex: none;
+      /* max-width: 100%; Allow text to take up full width on smaller screens */
+    }
   }
 
 /* styles.css */
