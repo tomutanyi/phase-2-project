@@ -1,259 +1,276 @@
-/* App.css */
-
-
-body{
-  background-color: rgb(255, 255, 255);
+*{
+  margin: 0;
+  padding: 0;
 }
 
-.add-to-cart-button {
-  background-color: #3498db;
-  color: #fff;
-  border: none;
-}
+  :root{
+    --color-brand-primary: #fb5442;
+    --color-brand-contrast: #f7cccc;
+    --color-medium-gray: #d0cbcb;
+    --color-light-gray: #ccc;
+    --color-background:rgb(167, 162, 162);
+    --font-body: 'segoe UI', Arial, Helvetica, sans-serif;
+    }
 
-.product-container {
-  margin-top: 50px;
-  text-align: center;
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+    .navbar{
+      display: flex;
+      border-radius: 10px;
+      flex-direction: row;
+      background-color:var(--color-medium-gray);
+      height: 50px;
+      color: var(--color-brand-primary);
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
 
- .maincontainer h2 {
-  margin-top: 20px;
-  align-items: center;
+    .navLink{
+      padding: 10px 15px;
+      display: flex;
+      flex-direction: row;
+      text-decoration: none;
+     
+    }
+    
+  .navLink p{
+    font-size: 20px;
+    color: black;
+  margin-left: 8px;
+    
+  }
+
+  .navLink h3{
+    margin-right: 50px;
+  }
+
+  .icon{
+    font-size: 22px;
+    margin-right: 5px;
+    color: black;
   
+  }
 
+.maincontainer{
+ height: 100%; 
+ /* background-color:var(--color-brand-contrast); */
+ border-radius: 50px;
+}
  
-  
-}
-
-.product-list {
-  display: flex;
+.product-container{
+  display:  flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  background-color: var(--color-medium-gray);
+  border-radius: 20px;
+  
+  
+
 }
 
-.product {
-  border: 1px solid #ddd;
-  border-radius: 8px;
+.product{
+  display: flex;
+  flex-direction: row;
+  background-color: #e5e3e3;
   padding: 20px;
-  width: 250px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin: 10px;
-  display: flex;
-  flex-direction: column;
+  height:500px ;
+  width:500px;
+  justify-content: space-around;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  max-width: 350px;
+  transition: transform 0.2s ease-in-out;
+  text-align: center;
+  
+  
 }
 
-.product:hover{
-  background-color: #e07f74;
+/* Add a style when the card is selected (clicked) */
+.product-card.selected {
+  transform: scale(1.1); /* Enlarge the card when selected */
 }
 
-.product-image {
-  width: 100%; 
-  height: 200px; 
-  object-fit: cover; 
+.product:hover {
+  transform: scale(1.05); /* Enlarge the card on hover */
 }
 
+.product img{
+  height:350px ;
+  width: 330px;
+  border-radius: 10px;
+}
+
+.product-details {
+  padding: 20px;
+  text-decoration: none;
+}
 .product-name {
+  font-size: 1.2rem;
+  margin: 0;
   font-weight: bold;
-  margin-top: 8px;
+  margin-top: 20px;
   flex-grow: 1;
+  text-align: center;
+  color: black;
+  
+   
+}
+
+.product-description {
+  font-size: 0.9rem;
+  margin: 10px 0;
 }
 
 .product-price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--color-brand-primary);
+  margin: 0;
   color: #000000;
-  margin-top: 4px;
+  margin-top: 8px;
   font-size:larger;
-}
-
-.add-to-cart-button {
-  background-color: #3498db;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 10px;
-}
-
-.add-to-cart-button:hover {
-  background-color: #2980b9;
-}
-
-/* SignUp.css */
-
-.signup-container {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 40px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  
-}
-
-.signup-label {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.signup-input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  font-size: 14px;
-}
-
-.signup-button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-/* CheckoutForm.css */
-
-/* Style for the form container */
-.checkout-form-container {
-  max-width: 200px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Style for the form labels */
-.checkout-form-label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
-}
-
-/* Style for the form inputs */
-.checkout-form-input {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-/* Style for the submit button */
-.checkout-form-button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  padding: 10px 16px;
-  cursor: pointer;
-}
-
-.checkout-form-button:hover {
-  background-color: #0056b3;
-}
-
-/* Navbar.css */
-
-/* Style for the navbar container */
-.navbar {
-  background-color: #333333;
-  overflow: hidden;
-  display: flex;
-  padding: 5px;
-  margin-bottom: 50px;
-  justify-content: space-evenly;
-}
-
-/* Ensure the navbar spans horizontally */
-.navbar a {
-  float: left; /* Float links to the left */
-  display: block;
-  color: white;
   text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
 }
 
-/* Style for the active link */
-.navbar a.active {
-  background-color: #007bff;
-}
 
-/* Change color on hover */
-.navbar a:hover {
-  background-color: #e74c3c;
-  color: black;
-}
-
-/* Clear the float to prevent subsequent elements from floating */
-.navbar:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Cart.css */
-
-/* Style for the checkout link container */
-.checkout-link {
-  margin-bottom: 20px;
-  text-align: left;
-}
-
-/* Style for the checkout link */
-.checkout-link a {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 4px;
-  text-decoration: none;
-}
-
-.checkout-link a:hover {
-  background-color: #0056b3;
-}
 
 .Title{
-  color: rgb(0, 0, 0);
-text-align: center;
+  color:var(--color-brand-primary);
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: x-large;
 
 }
-
-.navLink{
-  color: #007bff;
-  font-Size: 30px;
-}
-
 
 .search-container {
   display: flex;
   justify-content: center;
+  border: 1.5px solid black;
+  display: flex;
   align-items: center;
-  margin-top: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
 
 .search-input {
   padding: 8px 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
   font-size: 16px;
   width: 300px;
+  flex: 1;
+  padding: 10px;  
+  font-size: 1rem;
 }
 
 .search-input:focus {
   outline: none;
-  border-color: #007bff;
 }
+
+
+ 
+
+  .decor {
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding-left: 100px;
+    /* border: 3px solid var(--color-brand-primary); */
+    background-color: var(--color-medium-gray);
+    margin-bottom: 40px;
+
+   /* Vertically center the content */
+  }
+  
+  .img {
+    
+    flex: 1; /* The image will take up 30% of the container width */
+    max-width: 100%; /* Set a maximum width for the image */
+    
+    padding: 10px; /* Optional padding for spacing */
+  }
+  
+  .img img{
+    
+    height: 500px;
+  }
+  
+  .text {
+   font-size: larger;
+   font-weight: 500;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    flex: 2; /* The text will take up 70% of the container width */
+    max-width: 70%; /* Set a maximum width for the text */
+    padding: 10px; /* Optional padding for spacing */
+    text-align: center;
+  }
+
+/* styles.css */
+/* Add this CSS to your existing styles */
+
+.footer {
+  background-color: #aeaaaa;
+  color: #fff;
+  padding: 20px 0;
+  margin-top: 20px;
+  border-radius: 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  padding: 0 20px;
+  max-width: 300px; /* Control the width of each column */
+  margin-bottom: 20px; /* Add space between sections */
+}
+
+.footer-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 5px;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: var(--color-brand-primary); /* Change color on hover */
+}
+
+.footer-bottom {
+  text-align: center;
+  width: 100%; /* Ensure the text is centered */
+  margin-top: 20px;
+  color: var(--color-brand-primary);
+}
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
