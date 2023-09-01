@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css'
 
-const CheckoutForm = ({totalCost,onRemove}) => {
+const CheckoutForm = ({totalCost,onRemove, navigate }) => {
 
   const [formData, setFormData] = useState({
     name: '',
@@ -19,10 +19,38 @@ const CheckoutForm = ({totalCost,onRemove}) => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+    
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // You can add further logic here, like sending the data to a server
+
+    // Create a new order object from the form data
+    const newOrder = {
+      name: formData.name,
+      tel: formData.tel,
+      address: formData.address,
+      payment: formData.payment,
+      totalCost: formData.totalCost,
+    };
+
+    try {
+      const response = await fetch('https://kikapu-server.onrender.com/orders', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newOrder),
+      });
+
+      if (response.ok) {
+        console.log('Order placed successfully');
+        navigate('/orders')
+      } else {
+        console.error('Failed to place the order');
+      }
+    } catch (error) {
+      console.error('Error placing the order:', error);
+    }
+
   };
 
   return (

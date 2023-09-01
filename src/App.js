@@ -2,15 +2,18 @@ import './App.css';
 import Display from './Display';
 import ProductDetails from './ProductDetails';
 import { useState, useEffect } from 'react';
-import { Routes, Route,useLocation } from 'react-router-dom';
+import { Routes, Route,useLocation, useNavigate } from 'react-router-dom';
 import SignUp from './SignUp';
 import SignIn from './SignIn';
 import Landing from './Landing';
 import NotFound from './NotFound';
 import Cart from './Cart';
 import Checkout from './Checkout';
+import Orders from './Orders';
 
 function App() {
+
+  const navigate = useNavigate();
   //Get to display products available
 const[products, setProducts] = useState([])
 const location = useLocation();
@@ -53,7 +56,8 @@ function removeFromCart(productToRemove) {
           <Route path="/signUp" element={<SignUp/>}/>
           <Route path="/signIn" element={<SignIn/>}/>
           <Route path='/cart' element={<Cart inCart={inCart} onRemove={removeFromCart}/>}/>
-          <Route path="/checkout" element={<Checkout onRemove={removeFromCart} totalCost={checkOutProp}/>}/>
+          <Route path="/checkout" element={<Checkout onRemove={removeFromCart} totalCost={checkOutProp} navigate={navigate}/>}/>
+          <Route path="/orders" element={<Orders/>}/>
         </Route>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
