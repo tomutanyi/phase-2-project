@@ -1,4 +1,4 @@
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { FaCartPlus, FaShopify, FaUserPlus, FaUserCheck } from 'react-icons/fa';
 import './App.css';
 import { useState } from 'react';
@@ -9,9 +9,11 @@ import Footer from './Footer';
 const Landing = () => {
   const [loggedInUser, setLoggedInUser] = useState(JSON.parse(localStorage.getItem('userData')));
 
+  const nagivate=useNavigate()
+
   const handleLogout = () => {
-    localStorage.removeItem('userData');
     setLoggedInUser(null);
+    nagivate("/")
   };
 
   return (
@@ -31,6 +33,7 @@ const Landing = () => {
                   <p>Sign Up</p>
                 </Link>
                 <br />
+                <br />
 
                 <Link className="navLink" to="/signIn">
                     <FaUserCheck className='icon'/>
@@ -44,23 +47,18 @@ const Landing = () => {
                 <p>Cart</p>
             </Link>
 
-            <Link className="navLink" to="/orders">
-              <p>Orders</p>
-            </Link>
-            <br />
-            
-
             {loggedInUser && (
               <div className='navLink'>
-                 <h3>Welcome, {loggedInUser.username}!</h3>    
+                 <h3>Welcome, {loggedInUser.username}!</h3>
+                 <Link className="navLink" to="/orders">
+                    <p>Orders</p>
+                </Link>    
                            
                 <p onClick={handleLogout}> Log Out
                 </p>
                 <br />
               </div>
             )}
-
-           
             <br />
       </nav>
       <Outlet></Outlet>

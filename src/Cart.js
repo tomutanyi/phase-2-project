@@ -25,7 +25,7 @@ const Cart = ({ inCart, onRemove }) => {
     <div className="product-container">
       <div className="checkout-link">
          <p className="total-cost">Total Cost: ${totalCost}</p>
-         <button onClick={handleCheckOut}>CheckOut</button>
+         <button className="checkout-btn" onClick={handleCheckOut}>CheckOut</button>
          {/* <Link to="/checkout">Checkout</Link> */}
       </div>
       {inCart.map((product, index) => {

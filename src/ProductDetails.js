@@ -22,23 +22,22 @@ if (!product){
     return <div>loading...</div>
 }
 return (
-    <div className="product-container">
-       <div className="product">
+    <div className="details-container">
+       <div className="picture">
        <img
           src={product.product_full_image}
           alt={product.product_name}
-          className="product-image"
+          className="detail-image"
         />
-        <div className='product-details'>
-            <p className="product-name">{product.product_name}</p>
-            <h2 className="product-price">${product.unit_price}</h2> 
-            <h6>Description: {product.product_description}</h6>
-            <p>Rank: {product.ranking}</p>
-            <h6>Created On: {product.created}</h6>
+         </div>
+        <div className='additional-details'>
+            <p className="detail-name">{product.product_name}</p> <br />
+            <h5 className="detail-description">Description: {product.product_description}</h5> <br />
+            <h5 className="detail-created">Created On: {product.created}</h5> <br />
+            <p className="detail-description">Rank: {product.ranking}</p> <br />
+            <h2 className="detail-price">${product.unit_price}</h2> 
             <button onClick={()=>addToCart(product)} className="add-to-cart-button">Add to Cart</button>
        </div>
-       </div>
-        
     </div>
 )
 }
