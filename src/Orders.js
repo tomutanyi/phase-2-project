@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {useNavigate } from "react-router-dom";
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
@@ -36,7 +37,7 @@ const Orders = () => {
       <ul>
         {orders.map((order) => (
           <li key={order.id}>
-            ID: {order.id}<br/> Name: {order.name}<br/>  Tel: {order.tel}<br/>  Address: {order.address}<br/>  Payment: {order.payment}<br/>  Total Cost: {order.totalCost}
+            Order Number: {order.id}<br/> Name: {order.name}<br/>  Tel: {order.tel}<br/>  Address: {order.address}<br/>  Payment: {order.payment}<br/>  Total Cost: {order.totalCost}
           </li>
           
         ))}
