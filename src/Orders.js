@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from "react-router-dom";
 
 
-const Orders = () => {
+
+const Orders = ({name}) => {
   const [orders, setOrders] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -22,6 +22,9 @@ const Orders = () => {
       setIsLoading(false);
     }
   }, []);
+  
+//  console.log(orders.filter((order)=>order.name === name))
+ 
 
   if (isLoading) {
     return <div className="loading">Loading...</div>;
@@ -34,18 +37,18 @@ const Orders = () => {
   return (
     <div className="orders-container">
       <h1 className="orders-title">Orders</h1>
-      <ul className="orders-list">
-        {orders.map((order) => (
-          <li key={order.id} className="order-item">
+      {/* <ul className="orders-list"> */}
+      {orders.filter((order)=>order.name === name).map((order)=>{
+        return <div className="orders-container">
             <p>Order Number: {order.id}</p>
             <p>Name: {order.name}</p>
             <p>Tel: {order.tel}</p>
             <p>Address: {order.address}</p>
             <p>Payment: {order.payment}</p>
             <p>Total Cost: {order.totalCost}</p>
-          </li>
-        ))}
-      </ul>
+            </div>
+      })}
+        
     </div>
   );
 };
