@@ -39,14 +39,14 @@ const Orders = ({name}) => {
       <h1 className="orders-title">Orders</h1>
       {/* <ul className="orders-list"> */}
       {orders.filter((order)=>order.name === name).map((order)=>{
-        return <>
+        return <div className="orders-container">
             <p>Order Number: {order.id}</p>
             <p>Name: {order.name}</p>
             <p>Tel: {order.tel}</p>
             <p>Address: {order.address}</p>
             <p>Payment: {order.payment}</p>
             <p>Total Cost: {order.totalCost}</p>
-            </>
+            </div>
       })}
         
     </div>
