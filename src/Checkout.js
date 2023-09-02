@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css'
 
-const CheckoutForm = ({totalCost,onRemove, navigate }) => {
+const CheckoutForm = ({totalCost,onRemove, navigate, onAddName }) => {
 
   const [formData, setFormData] = useState({
     name: '',
@@ -31,6 +31,7 @@ const CheckoutForm = ({totalCost,onRemove, navigate }) => {
       payment: formData.payment,
       totalCost: formData.totalCost,
     };
+    onAddName(newOrder.name)
 
     try {
       const response = await fetch('https://kikapu-server.onrender.com/orders', {

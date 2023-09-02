@@ -11,14 +11,19 @@ import Cart from './Cart';
 import Checkout from './Checkout';
 import Orders from './Orders';
 
-function App() {
 
+function App() {
+  const[name, setName]=useState('')
   const navigate = useNavigate();
   //Get to display products available
 const[products, setProducts] = useState([])
 const location = useLocation();
   const checkOutProp = location.state ? location.state.totalCost : null;
 
+  function handleNameChange(name){
+    setName(name)
+  }
+  
 useEffect(()=>{
 try {
   fetch("http://ecommerce.muersolutions.com/api/v1/products",{
@@ -56,8 +61,8 @@ function removeFromCart(productToRemove) {
           <Route path="/signUp" element={<SignUp/>}/>
           <Route path="/signIn" element={<SignIn/>}/>
           <Route path='/cart' element={<Cart inCart={inCart} onRemove={removeFromCart}/>}/>
-          <Route path="/checkout" element={<Checkout onRemove={removeFromCart} totalCost={checkOutProp} navigate={navigate}/>}/>
-          <Route path="/orders" element={<Orders/>}/>
+          <Route path="/checkout" element={<Checkout onRemove={removeFromCart} totalCost={checkOutProp} navigate={navigate} onAddName={handleNameChange}/>}/>
+          <Route path="/orders" element={<Orders name={name}/>}/>
         </Route>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
