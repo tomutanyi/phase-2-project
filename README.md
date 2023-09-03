@@ -56,27 +56,49 @@ Use this command to stop the React app:
 
 ![](gifs/description.gif)
 
-2. Clicking on a product displays it's details.
+
+2. A page to sign up as a user.
+
+
+![](gifs/signup.gif)
+
+
+3. A page to sign in and have the username displayed at the top of the page.
+
+
+![](gifs/signup.gif)
+
+
+4. Clicking on a product displays it's details.
 
 
 ![](gifs/1-1.gif)
 
-3. A searchbar to search tproducts regardless of case.
+
+5. A searchbar to search products regardless of case.
 
 
 ![](gifs/2-1.gif)
 
 
-4. A cart to add items.
+6. A cart to add items.
 
 
 ![](gifs/3-1.gif)
 
 
-5. A checkout form to checkout items to buy once in the cart
+7. A checkout form to checkout items to buy once in the cart.
 
 
 ![](gifs/4-1.gif)
+
+
+8. An orders page that the user is automatically navigated to
+   after checkout & displays a user's current orders.
+
+
+![](gifs/5-1.gif)
+
 
 
 ## Technologies used
@@ -84,7 +106,8 @@ Use this command to stop the React app:
 1. React for the frontend.
 2. CSS and React icons for the styling.
 3. Node.js for running the react app.
-4. Vercel for front-end hosting
+4. Vercel for front-end hosting.
+5. Render for back-end hosting of the orders database.
 
 ## Authors
 
