@@ -65,7 +65,7 @@ Use this command to stop the React app:
 3. A page to sign in and have the username displayed at the top of the page.
 
 
-![](gifs/signup.gif)
+![](gifs/signin.gif)
 
 
 4. Clicking on a product displays it's details.

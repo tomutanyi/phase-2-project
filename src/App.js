@@ -25,6 +25,8 @@ const location = useLocation();
   }
   
 useEffect(()=>{
+
+  // fetching from the products API
 try {
   fetch("http://ecommerce.muersolutions.com/api/v1/products",{
     method:"GET",
@@ -39,16 +41,22 @@ try {
 
 const[inCart,setInCart]=useState([])
 
+// a function to add an item to the cart
+
 function addToCart(product){
   setInCart([...inCart,product])
     console.log(inCart);
 }
+
+// a function to remove an item from the cart
 
 function removeFromCart(productToRemove) {
   const updatedCart = inCart.filter((product) => product !== productToRemove);
   setInCart(updatedCart);
 
 }
+
+// routes for the components
   return (
     <div className="App">
       <Routes>

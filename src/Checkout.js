@@ -33,6 +33,7 @@ const CheckoutForm = ({totalCost,onRemove, navigate, onAddName }) => {
     };
     onAddName(newOrder.name)
 
+    // a post request of the form to the orders server hosted on Render
     try {
       const response = await fetch('https://kikapu-server-iwt5.onrender.com/orders', {
         method: 'POST',
@@ -44,6 +45,7 @@ const CheckoutForm = ({totalCost,onRemove, navigate, onAddName }) => {
 
       if (response.ok) {
         console.log('Order placed successfully');
+        alert('Order placed successfully')
         navigate('/orders')
       } else {
         console.error('Failed to place the order');

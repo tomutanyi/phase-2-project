@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const Cart = ({ inCart, onRemove }) => {
   const [totalCost, setTotalCost] = useState(0);
   const navigate = useNavigate();
-
+ // navigating to the checkout page
   function handleCheckOut() {
     navigate("/checkout", { state: { totalCost: totalCost } });
   }
@@ -13,6 +13,8 @@ const Cart = ({ inCart, onRemove }) => {
     calculateTotalCost();
   }, [inCart]);
 
+
+  // calculating the total cost
   const calculateTotalCost = () => {
     const totalPrice = inCart.reduce(
       (accumulator, product) => accumulator + product.unit_price,
