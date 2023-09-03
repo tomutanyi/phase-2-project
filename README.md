@@ -1,6 +1,8 @@
 ## Project Description
 
-This is an E-commerce site that allows users to select items, add the items to their cart and perform a checkout.
+Kikapu.com is an e-commerce website that allows users to view products, without signing into the page,
+sign up as a user, add items to the cart and checkout.
+After checking out, it is possible to see all the pending orders of the user.
 
 ![A gif of the website](gifs/description.gif)
 
@@ -18,17 +20,10 @@ BASE_URL= http://ecommerce.muersolutions.com/Links to an external site.api/v1
 
 Docs_base_url = http://ecommerce.muersolutions.com/developer/redocLinks to an external site.
 
- 
-
-ENDPOINTS
-
-SIGN UP => http://ecommerce.muersolutions.com/api/v1/user/signupLinks to an external site.
-
-SIGN IN => http://ecommerce.muersolutions.com/api/v1/user/loginLinks to an external site.
-
- 
-
 Fetch Products => http://ecommerce.muersolutions.com/api/v1/products
+
+The sign-in and sign-up functionality is handled using the local storage.
+This is due to an error with the sign-up and sign-in API provided for the project.
 
 ## Project Setup
 
@@ -127,6 +122,7 @@ Use this command to stop the React app:
 3. Node.js for running the react app.
 4. Vercel for front-end hosting.
 5. Render for back-end hosting of the orders database.
+6. React-icons for the dasboard.
 
 ## Authors
 
