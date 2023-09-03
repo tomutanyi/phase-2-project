@@ -61,7 +61,7 @@ const CheckoutForm = ({totalCost,onRemove, navigate, onAddName }) => {
         <label className="checkout-form-label"><br />
           Name:
           <br />
-          <input placeholder='Write your full name' type="text" name="name" value={formData.name} onChange={handleChange} required />
+          <input placeholder='Write your Username' type="text" name="name" value={formData.name} onChange={handleChange} required />
             </label>
             <label className="checkout-form-label">
               Phone Number:

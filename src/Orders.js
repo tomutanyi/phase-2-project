@@ -41,7 +41,7 @@ const Orders = ({name}) => {
       {orders.filter((order)=>order.name === name).map((order)=>{
         return <div className="orders-container">
             <p>Order Number: {order.id}</p>
-            <p>Name: {order.name}</p>
+            <p>Username: {order.name}</p>
             <p>Tel: {order.tel}</p>
             <p>Address: {order.address}</p>
             <p>Payment: {order.payment}</p>

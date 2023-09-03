@@ -88,11 +88,11 @@ Use this command to stop the React app:
 
 ## Authors
 
-Tom Omele Mutanyi
-Mercy Muriithi
-Victor Masibo
-Victor Wanjala
-William Nyongesa
+1. Tom Omele Mutanyi
+2. Mercy Muriithi
+3. Victor Masibo
+4. Victor Wanjala
+5. William Nyongesa
 
 ## License
 

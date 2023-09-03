@@ -37,14 +37,11 @@ try {
 }
 },[])
 
-//function to add products to cart
-    //set state
 const[inCart,setInCart]=useState([])
-    //function
+
 function addToCart(product){
   setInCart([...inCart,product])
     console.log(inCart);
-    //alert("Product added successfully")
 }
 
 function removeFromCart(productToRemove) {

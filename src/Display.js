@@ -6,7 +6,6 @@ function Display({ products }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
 
-  // Function to update search results based on the current search query
   const updateSearchResults = () => {
     const filteredProducts = products.filter(product =>
       product.product_name.toLowerCase().includes(searchQuery.toLowerCase())
@@ -14,7 +13,6 @@ function Display({ products }) {
     setSearchResults(filteredProducts);
   };
 
-  // Handle search query changes
   const handleSearchChange = event => {
     setSearchQuery(event.target.value);
     updateSearchResults();
