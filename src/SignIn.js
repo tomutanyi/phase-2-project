@@ -16,7 +16,8 @@ function SignIn() {
          navigate("/")
          window.location.reload();
       } else {
-        alert('Invalid credentials.');
+        // if the details are incorrect, the user is instructed to try again
+        alert('Invalid credentials. Try again.');
       }
     } else {
       alert('User not found. Please sign up.');

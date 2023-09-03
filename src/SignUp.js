@@ -10,6 +10,7 @@ function SignUp() {
 
   const handleSignUp = () => {
     if (username && password && confirmPassword) {
+      // this is to make sure a user confirms a password so as to be sure about it.
       if (password !== confirmPassword) {
         alert("Passwords don't match.");
         return;
@@ -24,10 +25,13 @@ function SignUp() {
       setUsername('');
       setPassword('');
       setConfirmPassword('');
+      // if the user signs up successfully, the y get an alert and are navigated to the 
+      // sign in page
       alert('Sign up successful!');
       
       navigate('/signIn');
     } else {
+      // if some fields are empty, the user is instructed to fill them
       alert('Please fill in all fields.');
     }
   };

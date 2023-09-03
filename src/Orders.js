@@ -35,9 +35,11 @@ const Orders = ({name}) => {
   }
 
   return (
+
+    // shows the orders placed arranged from oldest to newest in descending order
     <div className="orders-container">
       <h1 className="orders-title">Orders</h1>
-      {/* <ul className="orders-list"> */}
+      {/* Filters the orders according to the user currently logged in. */}
       {orders.filter((order)=>order.name === name).map((order)=>{
         return <div className="orders-container">
             <p>Order Number: {order.id}</p>

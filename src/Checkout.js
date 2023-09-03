@@ -43,6 +43,7 @@ const CheckoutForm = ({totalCost,onRemove, navigate, onAddName }) => {
         body: JSON.stringify(newOrder),
       });
 
+      // alerts the user to a successful order and navigates them to the orders page
       if (response.ok) {
         console.log('Order placed successfully');
         alert('Order placed successfully')

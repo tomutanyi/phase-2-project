@@ -22,6 +22,7 @@ if (!product){
     return <div>loading...</div>
 }
 return (
+    // shows the details of the selected product
     <div className="details-container">
        <div className="picture">
        <img
@@ -36,6 +37,7 @@ return (
             <h5 className="detail-created">Created On: {product.created}</h5> <br />
             <p className="detail-description">Rank: {product.ranking}</p> <br />
             <h2 className="detail-price">${product.unit_price}</h2> 
+            {/* a button to add the item to the cart */}
             <button onClick={()=>addToCart(product)} className="add-to-cart-button">Add to Cart</button>
        </div>
     </div>
