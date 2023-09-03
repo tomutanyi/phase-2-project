@@ -9,7 +9,7 @@ const Orders = ({name}) => {
 
   useEffect(() => {
     try {
-      fetch("https://kikapu-server.onrender.com/orders", {
+      fetch("https://kikapu-server-iwt5.onrender.com/orders", {
         method: "GET",
         headers: { "Content-Security-Policy": "upgrade-insecure-requests" },
       })

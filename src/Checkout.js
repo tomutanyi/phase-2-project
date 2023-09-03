@@ -34,7 +34,7 @@ const CheckoutForm = ({totalCost,onRemove, navigate, onAddName }) => {
     onAddName(newOrder.name)
 
     try {
-      const response = await fetch('https://kikapu-server.onrender.com/orders', {
+      const response = await fetch('https://kikapu-server-iwt5.onrender.com/orders', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

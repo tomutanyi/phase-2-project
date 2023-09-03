@@ -1,5 +1,5 @@
 import { Link, Outlet, useNavigate } from 'react-router-dom';
-import { FaCartPlus, FaShopify, FaUserPlus, FaUserCheck } from 'react-icons/fa';
+import { FaCartPlus, FaShopify, FaUserPlus, FaUserCheck, FaSignOutAlt } from 'react-icons/fa';
 import './App.css';
 import { useState } from 'react';
 import Footer from './Footer';
@@ -54,8 +54,9 @@ const Landing = () => {
                  <Link className='order' to="/orders">
                     <p>Orders</p>
                 </Link>    
-                           
+       
                 <p onClick={handleLogout}> Log Out
+              
                 </p>
                 <br />
               </div>

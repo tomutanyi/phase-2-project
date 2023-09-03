@@ -4,9 +4,13 @@ This is an E-commerce site that allows users to select items, add the items to t
 
 ![A gif of the website](gifs/description.gif)
 
-The link to my frontend on vercel: 
+The link to my frontend on Vercel: 
 
 https://phase-2-project-umber.vercel.app/
+
+the link to my orders server on Render:
+
+https://kikapu-server-iwt5.onrender.com/
 
 My backend APIs:
 
@@ -98,6 +102,21 @@ Use this command to stop the React app:
 
 
 ![](gifs/5-1.gif)
+
+
+8. A button to log out.
+
+
+![](gifs/6-1.gif)
+
+
+
+### Bonus Deliverable
+
+1. An orders page to track orders
+
+
+![](gifs/7-1.gif)
 
 
 
