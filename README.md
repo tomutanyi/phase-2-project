@@ -35,8 +35,6 @@ To get started, follow these steps to set up your project:
 
 2. install npm and use npm start to start the app.
 
-Use these commands:
-
    `npm install`
 
 3. Run npm start to start the React app:
