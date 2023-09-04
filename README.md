@@ -31,21 +31,21 @@ To get started, follow these steps to set up your project:
 
 1. Fork and clone the repository.
 
-`git clone git@github.com:tomutanyi/phase-2-project.git`
+   `git clone git@github.com:tomutanyi/phase-2-project.git`
 
 2. install npm and use npm start to start the app.
 
-Use this commands:
+Use these commands:
 
-`npm install`
+   `npm install`
 
-Run npm start to start the React app:
+3. Run npm start to start the React app:
 
-`npm start`
+   `npm start`
 
-Use this command to stop the React app:
+4. Use this command to stop the React app:
 
-`CTRL + C`
+   `CTRL + C`
 
 
 ## Project Features
