@@ -1,5 +1,7 @@
 ## Project Description
 
+> blockquote
+
 Kikapu.com is an e-commerce website that allows users to view products, without signing into the page,
 sign up as a user, add items to the cart and checkout.
 After checking out, it is possible to see all the pending orders of the user.
